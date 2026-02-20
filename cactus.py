@@ -1,6 +1,7 @@
 # projeto em andamento do cactus
 
-# set_world_size(4) # ainda falta desbloquear
+# iniciar o cactus
+# set_world_size(5)
 clear()
 
 # arar o terreno
@@ -30,42 +31,33 @@ move(West)
 move(West)
 move(West)
 
+a1 = False
+
 while(True) :
 	for i in range(5) :
-	
-		a1 = False
-		b1 = False
-		c1 = False
-		d1 = False
 	
 # colher		
 		if can_harvest() :
 			if get_entity_type() == Entities.Cactus :
+				if get_pos_x() == 0 and get_pos_y() == 0 :
+					a1 = True
 				if get_pos_y() < 3 :
 					if measure() > measure (North) :
 						swap(North)
 						a1 = False
-					else :
-						a1 = True
-				else :
+				if get_pos_y() == 4 :
 					if measure() < measure (South) :
 						swap(South)
-						b1 = False
-					else :
-						b1 = True
+						a1 = False
 				if get_pos_x() < 3 :
 					if measure() > measure (East) :
 						swap(East)
-						c1 = False
-					else :
-						c1 = True
-				else :
+						a1 = False
+				if get_pos_x() == 4 :
 					if measure() < measure (West) :
 						swap(West)
-						d1 = False
-					else :
-						d1 = True 
-			if get_pos_x() == 4 and get_pos_y() == 4 and a1 == True and b1 == True and c1 == True and d1 == True :
+						a1 = False
+			if get_pos_x() == 4 and get_pos_y() == 4 and a1 == True :
 				harvest()
 
 # plantar
@@ -85,4 +77,4 @@ while(True) :
 		move(West)
 		move(West)
 		move(West)
-		
+
