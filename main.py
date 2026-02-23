@@ -88,7 +88,7 @@ while(True) :
 				a += 1
 			if a == area_abobora:
 				harvest()
-			if get_pos_x() == medida_cactus - 1 and get_pos_y() == medida_cactus - 1 and cac == True :
+			if get_pos_x() == posicao_inicial_x_cactus + medida_cactus - 1 and get_pos_y() == posicao_inicial_y_cactus + medida_cactus - 1 and cac == True :
 				harvest()
 		
 		# plantar
@@ -136,5 +136,6 @@ while(True) :
 		move(North)
 		
 	move(East)
+	
 	
 	
